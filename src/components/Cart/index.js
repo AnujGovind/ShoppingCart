@@ -13,7 +13,7 @@ const Cart = () => {
 
     return (
         <div>
-            <h3>Shopping Cart</h3>
+            <h3>Cart Details</h3>
 
             <div className="cart">
                 <div className="panel panel-default">

@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, useRoutes, Link } from "react-router-dom";
 import Cart from './components/Cart';
 import ProductList from './components/ProductList';
+import './app.css';
 
 const RoutePublic = () => {
     let routes = useRoutes([
@@ -14,29 +15,20 @@ const RoutePublic = () => {
 
 const App = () => {
     return (
-            <Router>
-                    <div className="container">
-             <div className="row">
-                 <div className="col-md-12">
-                     {/* <h1>Shopping Cart</h1>                     */}
-                 </div>
-             </div>
-                    <nav>
-                      <ul>
-                        <li>
-                          <Link to="/">Shopping Cart</Link>
-                        </li>
-                        <li>
-                          <Link to="/cart">Cart</Link>
-                        </li>
-                      </ul>
-                    </nav>
-                </div>
-
-                    {/* 👇️ Wrap your Route components in a Routes component */}
-                    <RoutePublic/>
-                </Router>
-                  );
-                }
+    <Router>
+      <div className="container">
+        <div className="row">
+          <div className="col-md-12">
+            <nav>
+              <Link to="/">Shopping Cart</Link>
+              <Link to="/cart" className='float-right'>Cart</Link>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <RoutePublic/>
+    </Router>
+  );
+}
 
 export default App;
