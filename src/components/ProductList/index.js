@@ -2,11 +2,11 @@ import React from 'react';
 import Product from '../../components/Product';
 import './index.css';
 import { useSelector } from 'react-redux';
-import { getProducts } from '../../store/products';
+import { getProductsList } from '../../store/products';
 
 const ProductList = () => {
 
-  const products = useSelector(state => getProducts(state));
+  const products = useSelector(state => getProductsList(state));
 
   return (
         <div>

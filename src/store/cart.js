@@ -6,7 +6,7 @@ const CART_REMOVE = 'cart/REMOVE';
 
 // reducer
 const initialState = {
-    items: [], // array of product ids
+    items: [], 
     currency: 'Rupees'
 };
 
@@ -22,11 +22,27 @@ export default function cart(state = initialState, action = {}) {
 }
 
 function handleCartAdd(state, payload) {
+    let items = [];
+    let isInCart =  (state.items || []).filter(item => {
+                    return item.productId === payload.productId
+                });
+
+                if(isInCart.length > 0){
+                    items = state.items.map(item => 
+                    {
+                        if(item.productId === payload.productId)
+                            item.quantity = payload.quantity
+                        return item;
+                    });
+                }
+                else
+                {
+                    items = [...state.items, 
+                        {productId: payload.productId, quantity :parseInt(payload.quantity)}
+                    ]
+                }
     return {
-        ...state,
-        items: [ ...state.items, 
-            {productId: payload.productId, quantity :parseInt(payload.quantity)}
-        ]
+        ...state, items 
     };
 }
 
@@ -38,7 +54,7 @@ function handleCartRemove(state, payload) {
 }
 
 // action creators
-export function addToCart(productId, quantity) {
+export function addToCart(productId, quantity = 1) {
     return {
         type: CART_ADD,
         payload: {

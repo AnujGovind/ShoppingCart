@@ -8,6 +8,15 @@
     line-height: 34px;
 }
 
-.product__button-wrap input {
+.mr-1{
     margin-right: 1rem;
+}
+
+.product.thumbnail a{
+    color: #000;
+    font-size: 24px;
+}
+
+.product img:hover{
+    cursor: pointer;
 }
