@@ -14,14 +14,14 @@ const data = [
     image: '/images/02.jpg'
   },
   {
-    id: 4,
+    id: 3,
     name: 'Studd Velvet Two Seater Sofa in White Colour ',
     price: 9599,
     currency: 'Rs',
     image: '/images/04.jpg'
   },
   {
-    id: 6,
+    id: 4,
     name: 'Little Red Stylish Single Seater Chair in Velvet Fabric',
     price: 5599,
     currency: 'Rs',
@@ -35,7 +35,7 @@ const data = [
     image: '/images/05.jpg'
   },
   {
-    id: 3,
+    id: 6,
     name: 'Soft Fabric Foam Made Modern Chair',
     price: 105000,
     currency: 'Rs',
